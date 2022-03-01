@@ -1,0 +1,14 @@
+version: '3'
+services:
+  rock-paper-scissors:
+    working_dir: /app/
+    image: rock-paper-scissors:latest
+    build: .
+    volumes:
+      - ${PWD}/src:/app/src
+      - ${PWD}/test:/app/test
+    environment:
+      - NODE_ENV=${ENV}
+    ports:
+      - "3000:3000"
+    command: "${COMMAND}"
