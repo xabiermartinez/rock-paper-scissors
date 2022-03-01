@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "test": "npm run unit",
-    "unit": "jest test/unit" ,
+    "unit": "jest test/unit --coverage" ,
     "pretest": "npx eslint  --max-warnings 0"
   },
   "dependencies": {
