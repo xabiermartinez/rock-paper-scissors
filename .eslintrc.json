@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "node": true,
+        "jest": true
+    },
+    "globals": {
+        "assert": true,
+        "expect": true,
+        "sinon": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+        "linebreak-style": [ "error", "unix" ],
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"],
+        "no-multi-spaces": ["error"],
+        "func-call-spacing": ["error"],
+        "space-before-function-paren": ["error"],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+        "no-trailing-spaces": ["error"],
+        "max-statements": [2, 22],
+        "complexity": [2, 8],
+        "no-console": [0],
+        "eol-last": ["error", "always"]
+    }
+}
