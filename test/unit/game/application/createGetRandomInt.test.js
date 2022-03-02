@@ -1,5 +1,4 @@
-const createGetRandomInt = require("../../../../src/game/application/createGetRandomInt");
-const getRandomInt = createGetRandomInt();
+const { getRandomInt } = require("../../../../src/game/application");
 
 describe("randomInt", function () {
     it("should return an number", function () {

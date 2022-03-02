@@ -1,5 +1,4 @@
-const createCalculateResult = require("../../../../src/game/application/createCalculateResult");
-const calculateResult = createCalculateResult();
+const { calculateResult } = require("../../../../src/game/application");
 
 describe("calculateResult", function () {
     let moves;
