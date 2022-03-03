@@ -3,7 +3,7 @@ const { userPlaysGame } = require("../../../../src/game/application");
 describe("UserPlaysGame", function () {
     let move;
     beforeEach(function () {
-        move = { name: "Xabi", moveType: "rock" };
+        move = { name: "Xabi", move: "rock" };
     });
 
     it("should return a game", function () {

@@ -6,6 +6,6 @@ const createUserPlaysGame = require("./createUserPlaysGame");
 const calculateResult = createCalculateResult();
 const getRandomInt = createGetRandomInt();
 const botMove = createBotMove({ getRandomInt });
-const userPlaysGame = createUserPlaysGame({ botMove, calculateResult });
+const userPlaysGame = createUserPlaysGame({ createBotMove, calculateResult, getRandomInt });
 
 module.exports = { botMove, calculateResult, getRandomInt, userPlaysGame };
