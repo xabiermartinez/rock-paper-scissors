@@ -7,7 +7,6 @@ describe("calculateResult", function () {
             moves = [];
         });
         it("should throw an error", function () {
-            //const result = calculateResult(moves);
             expect(() => calculateResult(moves)).toThrow("calculateResult needs 2 moves.");
         });
     });
