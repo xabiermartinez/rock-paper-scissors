@@ -1,5 +1,5 @@
-module.exports = (controller, validate = null) => {
-    return (req, res) => {
+module.exports = (controller, validate = null) =>
+    (req, res) => {
         const httpRequest = {
             body: req.body,
             query: req.query,
@@ -32,4 +32,3 @@ module.exports = (controller, validate = null) => {
             })
             .catch(() => res.status(500).send({ error: "An unkown error occurred." }));
     };
-};

@@ -1,7 +1,7 @@
 const { Game, User } = require("../domain");
 
-module.exports = ({ createBotMove, calculateResult, getRandomInt }) => {
-    return function ({ name, move }) {
+module.exports = ({ createBotMove, calculateResult, getRandomInt }) =>
+    ({ name, move }) => {
         const user = new User({ name });
         const game = new Game();
         const playerMove = { name: user.getName(), move };
@@ -16,4 +16,3 @@ module.exports = ({ createBotMove, calculateResult, getRandomInt }) => {
 
         return Object.freeze({ moves, result });
     };
-};

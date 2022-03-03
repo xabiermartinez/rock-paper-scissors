@@ -1,7 +1,9 @@
+const hasSymbol = (symbol, moves) => moves.some(move => move.move === symbol);
+
 const getWinner = moves => {
-    const hasRock = moves.some(move => move.move === "rock");
-    const hasScissor = moves.some(move => move.move === "scissors");
-    const hasPaper = moves.some(move => move.move === "paper");
+    const hasRock = hasSymbol("rock", moves);
+    const hasScissor = hasSymbol("scissors", moves);
+    const hasPaper = hasSymbol("paper", moves);
 
     let winner;
     if (hasRock && hasScissor) {
@@ -30,12 +32,11 @@ const getResult = moves => {
     };
 };
 
-module.exports = () => {
-    return function (moves) {
+module.exports = () =>
+    (moves) => {
         if (moves.length !== 2) {
             throw new Error("calculateResult needs 2 moves.");
         }
 
         return getResult(moves);
     };
-};
