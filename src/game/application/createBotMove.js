@@ -1,7 +1,7 @@
 const options = [ "rock", "paper", "scissors" ];
 
-module.exports = ({ getRandomInt }) => {
-    return function () {
-        return options[getRandomInt(options.length-1)];
-    };
-};
+module.exports = ({ getRandomInt }) =>
+    () => ({
+        name: "Bot",
+        move: options[getRandomInt(options.length-1)]
+    });
