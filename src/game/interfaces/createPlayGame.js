@@ -2,8 +2,8 @@ const createUserPlaysGame = require("../../../src/game/application/createUserPla
 const createBotMove = require("../../../src/game/application/createBotMove");
 const createCalculateResult = require("../../../src/game/application/createCalculateResult");
 
-module.exports = ({ getRandomInt }) => {
-    return async function (httpRequest) {
+module.exports = ({ getRandomInt }) =>
+    async (httpRequest) => {
         let body, statusCode;
 
         const headers = { "Content-Type": "application/json" };
@@ -23,4 +23,3 @@ module.exports = ({ getRandomInt }) => {
 
         return { headers, statusCode, body };
     };
-};
