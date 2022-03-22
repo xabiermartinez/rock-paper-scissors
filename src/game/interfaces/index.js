@@ -1,6 +1,11 @@
 const createPlayGame = require("./createPlayGame");
+const createGetGames = require("./createGetGames");
 const { getRandomInt } = require("../application");
 
-const playGame = createPlayGame({ getRandomInt });
+const createInMemoryDb = require("../infrastructure/createInMemoryDb");
+const inMemoryDb = createInMemoryDb();
 
-module.exports = { playGame };
+const playGame = createPlayGame({ getRandomInt, inMemoryDb });
+const getGames = createGetGames({ inMemoryDb });
+
+module.exports = { playGame, getGames };

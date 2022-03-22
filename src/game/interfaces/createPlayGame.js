@@ -2,7 +2,7 @@ const createUserPlaysGame = require("../../../src/game/application/createUserPla
 const createBotMove = require("../../../src/game/application/createBotMove");
 const createCalculateResult = require("../../../src/game/application/createCalculateResult");
 
-module.exports = ({ getRandomInt }) =>
+module.exports = ({ getRandomInt, inMemoryDb }) =>
     async (httpRequest) => {
         let body, statusCode;
 
@@ -10,7 +10,7 @@ module.exports = ({ getRandomInt }) =>
 
         try {
             const calculateResult = createCalculateResult();
-            const userPlaysGame = createUserPlaysGame({ createBotMove, calculateResult, getRandomInt });
+            const userPlaysGame = createUserPlaysGame({ createBotMove, calculateResult, getRandomInt, inMemoryDb });
             body = userPlaysGame({
                 name: httpRequest.body.name,
                 move: httpRequest.body.move

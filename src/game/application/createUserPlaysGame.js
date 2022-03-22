@@ -1,6 +1,6 @@
 const { Game, User } = require("../domain");
 
-module.exports = ({ createBotMove, calculateResult, getRandomInt }) =>
+module.exports = ({ createBotMove, calculateResult, getRandomInt, inMemoryDb }) =>
     ({ name, move }) => {
         const user = new User({ name });
         const game = new Game();
@@ -13,6 +13,8 @@ module.exports = ({ createBotMove, calculateResult, getRandomInt }) =>
         const moves = game.getMoves();
         const result = calculateResult(moves);
         game.setResult(result);
+
+        inMemoryDb.write({ moves, result });
 
         return Object.freeze({ moves, result });
     };
