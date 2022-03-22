@@ -21,6 +21,7 @@ Take a look at the [Endpoints](#endpoints) section for details.
 ## Endpoints
 
 - `POST` http://localhost:3000/api/play
+- `GET` http://localhost:3000/api/games
 
 You send a move in the body, so the game makes its move and resolves. Body format is:
 ```json
