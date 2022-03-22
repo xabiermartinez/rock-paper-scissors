@@ -1,10 +1,12 @@
 const createPlayGame = require("../../../../src/game/interfaces/createPlayGame");
+const createInMemoryDb = require("../../../../src/game/infrastructure/createInMemoryDb");
+const inMemoryDb = createInMemoryDb();
 
 describe("playGame controller", function () {
     let httpRequest, getRandomInt, playGame;
     beforeEach(function () {
         getRandomInt = () => 0;
-        playGame = createPlayGame({ getRandomInt });
+        playGame = createPlayGame({ getRandomInt, inMemoryDb });
     });
 
     describe("tie", function () {
